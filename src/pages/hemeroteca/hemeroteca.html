@@ -6,9 +6,9 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>hemeroteca</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>hemeroteca</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
@@ -19,20 +19,46 @@
             <ion-label ion-text stacked> Ingrese un número </ion-label>
             <ion-input type="number" placeholder="Ej:123" [(ngModel)] = "numero1"></ion-input>
         </ion-item>
-        
+
         <ion-item>
             <ion-label ion-text stacked> Ingrese un número </ion-label>
             <ion-input type="number" placeholder="Ej:123" [(ngModel)] = "numero2"></ion-input>
         </ion-item>
+
+        <ion-item>
+            <ion-label ion-text stacked> Divisible </ion-label>
+            <ion-input type="number" placeholder="Ej:123" [(ngModel)] = "numero3"></ion-input>
+        </ion-item>
         
+       
+
+
         <ion-item>
             {{resultado}}
         </ion-item>
-        
+
         <ion-item>
             <button ion-button (click) = "suma()"> SUMA </button>
+            <button ion-button (click) = "resta()"> RESTA </button>
+            <button ion-button (click) = "multi()"> MULTIPLICACIÓN </button>
+            <button ion-button (click) = "divi()"> DIVISIÓN </button>
         </ion-item>
+
     </ion-list>
-                      
+
+    <ion-item>
+        <button ion-button (click) = "tabla()" full>Tabla </button>
+    </ion-item>
+    
+    <ion-item *ngIf = "Estado">
+        <button ion-button (click) = "Cambio(true)"> Divisibles </button>
+        <button ion-button (click) = "Cambio(false)"> No Divisibles </button>
+    </ion-item>    
+        
+    
+    <ion-item *ngFor="let piso of edificio"> <!-- -->
+        {{piso.num}} * {{piso.ind}} = {{piso.res}}
+</ion-item>    
+
 
 </ion-content>
