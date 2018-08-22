@@ -32,15 +32,15 @@ export class HemerotecaPage {
     }
 
     resta() {
-        this.resultado = "La resta de " + this.numero1 + "+" + this.numero2 + "=" + (parseInt(this.numero1) + parseInt(this.numero2));
+        this.resultado = "La resta de " + this.numero1 + "-" + this.numero2 + "=" + (parseInt(this.numero1) - parseInt(this.numero2));
     }
 
     multi() {
-        this.resultado = "La multiplicación de " + this.numero1 + "+" + this.numero2 + "=" + (parseInt(this.numero1) + parseInt(this.numero2));
+        this.resultado = "La multiplicación de " + this.numero1 + "*" + this.numero2 + "=" + (parseInt(this.numero1) * parseInt(this.numero2));
     }
 
     div() {
-        this.resultado = "La división de " + this.numero1 + "+" + this.numero2 + "=" + (parseInt(this.numero1) + parseInt(this.numero2));
+        this.resultado = "La división de " + this.numero1 + "/" + this.numero2 + "=" + (parseInt(this.numero1) / parseInt(this.numero2));
     }
 
     edificio;
