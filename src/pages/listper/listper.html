@@ -1,3 +1,4 @@
+
 <!--
   Generated template for the ListperPage page.
 
@@ -29,4 +30,45 @@
 
     </ion-card>
 
+    <!--
+    <ion-list>
+        <button ion-item *ngFor="let persona of edificio">
+                {{persona.gender}}
+    </button>   
+</ion-list>
+
+    -->
+
+    <ion-list>  
+        <div *ngFor="let persona of edificio">
+            <ion-item *ngIf="persona.gender == 'female'">
+                <ion-avatar item-start>
+                    <img src="{{persona.picture.thumbnail}} >
+                </ion-avatar>
+
+                <h2>{{persona.name.first}} {{persona.name.last}}</h2>
+                <p> {{persona.gender}} <b> con edad </b>{{persona.dob.age}}</p> 
+
+            </ion-item>  
+
+            <button ion-button item-end (click) ="irVerperfil(persona)"> </button>
+
+        </div>
+    </ion-list>
+
 </ion-content>
+
+
+<!--    
+<ion-item>
+    <ion-avatar item-start>
+        <img src="img/avatar-finn.png">
+    </ion-avatar>
+
+    <button ion-item *ngFor="let persona of edificio" 
+            {{persona.gender}}
+</button>
+
+-->
+
+
