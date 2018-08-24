@@ -12,13 +12,9 @@ import {CienciasPage} from '../pages/ciencias/ciencias';
 import {HumanidadesPage} from '../pages/humanidades/humanidades';
 import {SistemasPage} from '../pages/sistemas/sistemas';
 import {ListperPage} from '../pages/listper/listper';
-
 import {VerperfilPage} from '../pages/verperfil/verperfil'
-
 import {HttpClientModule} from '@angular/common/http';
 import {ConectarProvider} from '../providers/conectar/conectar';
-
-
 
 @NgModule({
     declarations: [

@@ -7,7 +7,7 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>verperfil</ion-title>
+        <ion-title>Perfil de {{persona.name.first}}</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -15,16 +15,18 @@
 
 <ion-content padding>
 
-<ion-card>
-  <img src="img/nin-live.png"/>
-  <ion-card-content>
-    <ion-card-title>
-      Nine Inch Nails Live
-      </ion-card-title>
-    <p>
-      The most popular industrial group ever, and largely
-      responsible for bringing the music to a mass audience.
-    </p>
-  </ion-card-content>
-</ion-card>
+    <ion-card>
+        <img src="{{persona.picture.large}}"/>
+        <ion-card-content>
+            <ion-card-title style="text-transform: uppercase;">
+                {{persona.name.first}} {{persona.name.last}}
+                Nine Inch Nails Live
+            </ion-card-title>
+            <p>
+                The most popular industrial group ever, and largely
+                responsible for bringing the music to a mass audience.
+            </p>
+        </ion-card-content>
+    </ion-card>
+
 </ion-content>
