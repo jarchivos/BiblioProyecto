@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {SumaseparadaPage} from '../sumaseparada/sumaseparada';
+import {SumaobjetoPage} from '../sumaobjeto/sumaobjeto'
 
 // import {SumaseparadaPage} from '../sumaseparada/sumaseparada';
 /**
@@ -15,19 +17,28 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
     templateUrl: 'sifunciona.html',
 })
 export class SifuncionaPage {
+    numero1:number;
+    numero2:number;
+   
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
+
     }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad SifuncionaPage');
     }
-    
-    numero1:any;
-    numero2:any;
-    irSumaSeparada(n1,n2) {
-        this.navCtrl.push(n1, n2);
+
+
+    sumaseparada() {
+        this.navCtrl.push(SumaseparadaPage, {va1: this.numero1, va2: this.numero2});
     }
-  
-      
+
+    caja={nobj1: this.numero1, nobj2: this.numero2}
+    
+    
+    sumaobjeto() {
+        this.navCtrl.push(SumaobjetoPage, {caja: {numero1: this.numero1, numero2: this.numero2}});
+    }
+
 }

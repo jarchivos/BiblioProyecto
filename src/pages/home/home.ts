@@ -22,8 +22,15 @@ export class HomePage {
         this.navCtrl.push(ListperPage);
     }
     
+  
     irSifunciona() {
-        this.navCtrl.push(SifuncionaPage)
+        this.navCtrl.push(SifuncionaPage);
     }
-
+    
+    nombre='';
+    public continuar(){
+        this.navCtrl.push(SifuncionaPage, {nombre: this.nombre});
+    }
+        
+    
 }

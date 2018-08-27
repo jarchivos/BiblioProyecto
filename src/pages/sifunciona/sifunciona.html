@@ -6,30 +6,30 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>sifunciona</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>sifunciona</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-    
-    <ion-item>
-            <ion-label ion-text stacked> Ingrese un número </ion-label>
-            <ion-input type="number" placeholder="Ej:123" [(ngModel)] = "numero1"></ion-input>
-        </ion-item>
 
-        <ion-item>
-            <ion-label ion-text stacked> Ingrese un número </ion-label>
-            <ion-input type="number" placeholder="Ej:123" [(ngModel)] = "numero2"></ion-input>
-        </ion-item>
-    
     <ion-item>
-            <button ion-button (click) = "suma_separada()"> SUMA SEPARADA </button>
-            <button ion-button (click) = "suma_objeto()"> SUMA OBJETO </button>
-         </ion-item>
-    
-    
+        <ion-label ion-text stacked> Ingrese primer número </ion-label>
+        <ion-input type="number" placeholder="Ej:123" [(ngModel)] = "numero1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label ion-text stacked> Ingrese segundo número </ion-label>
+        <ion-input type="number" placeholder="Ej:123" [(ngModel)] = "numero2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <button ion-button (click) = "sumaseparada()"> SUMA SEPARADA </button>
+        <button ion-button (click) = "sumaobjeto()"> SUMA OBJETO </button>
+    </ion-item>
+
+    {{nombre}}
+
 
 </ion-content>

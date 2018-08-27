@@ -19,14 +19,14 @@
                     <ion-avatar item-start>
                         <img src="../assets/icon/ajustes.svg">
                     </ion-avatar>
-                    
+
                     <h2 class="color"> Hemeroteca:</h2>
-                    
+
                     <h3>Aquí encontrarás la Hemeroteca...</h3>
                     <p>I've had a pretty messed up day. If we just...</p>
                     <button ion-button item-end (click) ="irHemeroteca()"> <h2> <b> VER </b> </h2> </button>
                 </ion-item>
-                
+
                 <ion-item>
                     <ion-avatar item-start>
                         <img src="../assets/icon/calendario.svg">
@@ -36,7 +36,7 @@
                     <p>I've had a pretty messed up day. If we just...</p>
                     <button ion-button item-end> <h2> <b> VER </b> </h2> </button>
                 </ion-item>
-                
+
                 <ion-item>
                     <ion-avatar item-start>
                         <img src="../assets/icon/email.svg">
@@ -46,7 +46,7 @@
                     <p>I've had a pretty messed up day. If we just...</p>
                     <button ion-button item-end> <h2> <b> VER </b> </h2> </button>
                 </ion-item>
-                
+
                 <ion-item>
                     <ion-avatar item-start>
                         <img src="../assets/icon/guardar.svg">
@@ -56,7 +56,7 @@
                     <p>I've had a pretty messed up day. If we just...</p>
                     <button ion-button item-end> <h2> <b> VER </b> </h2> </button>
                 </ion-item>
-                
+
                 <ion-item>
                     <ion-avatar item-start>
                         <img src="../assets/icon/ajustes.svg">
@@ -66,8 +66,8 @@
                     <p>I've had a pretty messed up day. If we just...</p>
                     <button ion-button item-end (click) ="irListadodepersonas()"> <h2> <b> VER </b> </h2> </button>
                 </ion-item>
-                
-        
+
+
                 <ion-item>
                     <ion-avatar item-start>
                         <img src="../assets/icon/ajustes.svg">
@@ -75,11 +75,17 @@
                     <h2 class="color"> Sifunciona</h2>
                     <h3>Aquí ...</h3>
                     <p>I've had a pretty messed up day. If we just...</p>
-                    <button ion-button item-end (click) ="irSiFunciona()"> <h2> <b> VER </b> </h2> </button>
+                    <button ion-button item-end (click) ="irSifunciona()"> <h2> <b> VER </b> </h2> </button>
                 </ion-item>
-                
-                
+
+                <ion-item>
+                    <ion-label floating> Nombre </ion-label>
+                    <ion-input type="text" [(ngModel)]="nombre"></ion-input>
+                </ion-item>
+
+                {{nombre}}
             </ion-list>
+            <button (click)="continuar()" ion-button block> Continuar </button>
         </ion-card-content>
     </ion-card>
 </ion-content>
