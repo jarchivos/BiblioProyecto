@@ -1,9 +1,10 @@
-import {Component} from '@angular/core';
+    import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {HemerotecaPage} from '../hemeroteca/hemeroteca';
 
 import {ListperPage} from '../listper/listper';
 import {SifuncionaPage} from '../sifunciona/sifunciona';
+import {RegperPage} from '../regper/regper'
 
 @Component({
     selector: 'page-home',
@@ -26,6 +27,12 @@ export class HomePage {
     irSifunciona() {
         this.navCtrl.push(SifuncionaPage);
     }
+    
+    irFormulario(){
+        this.navCtrl.push(RegperPage);
+    }
+    
+    
     
     nombre='';
     public continuar(){

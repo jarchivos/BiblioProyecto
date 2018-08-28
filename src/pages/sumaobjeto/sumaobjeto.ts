@@ -14,18 +14,18 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
     templateUrl: 'sumaobjeto.html',
 })
 export class SumaobjetoPage {
-    bolsa: any;
-    n01: any;
-    n02: any;
-    resultado_objeto: any;
-    
+    todo: any = {
+        va1: "",
+        va2: ""
+    };
+    resultado: number;
     constructor(public navCtrl: NavController, public navParams: NavParams) {
-        this.bolsa = this.navParams.get("caja:{n01: this.nobj1, n02:this.nobj2}");
-        this.resultado_objeto = "La suma de " + this.n01 + "+" + this.n02 + "=" + (parseInt(this.n01) + parseInt(this.n02));
+        this.todo = this.navParams.get("todo");
     }
-    
-        ionViewDidLoad() {
+
+    ionViewDidLoad() {
         console.log('ionViewDidLoad SumaobjetoPage');
+        this.resultado = parseInt(this.todo.va1) + parseInt(this.todo.va2);
     }
 }
 

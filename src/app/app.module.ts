@@ -4,6 +4,7 @@ import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {StatusBar} from '@ionic-native/status-bar';
 
+
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
 
@@ -19,6 +20,7 @@ import {ConectarProvider} from '../providers/conectar/conectar';
 import {SifuncionaPage} from '../pages/sifunciona/sifunciona';
 import {SumaseparadaPage} from '../pages/sumaseparada/sumaseparada';
 import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
+import {RegperPage} from '../pages/regper/regper'
 
 @NgModule({
     declarations: [
@@ -32,7 +34,8 @@ import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
         VerperfilPage,
         SifuncionaPage,
         SumaseparadaPage,
-        SumaobjetoPage
+        SumaobjetoPage,
+        RegperPage
     ],
     imports: [
         BrowserModule,
@@ -51,7 +54,8 @@ import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
         VerperfilPage,
         SifuncionaPage,
         SumaseparadaPage,
-        SumaobjetoPage
+        SumaobjetoPage,
+        RegperPage
     ],
     providers: [
         StatusBar,

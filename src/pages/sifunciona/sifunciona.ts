@@ -38,7 +38,9 @@ export class SifuncionaPage {
     
     
     sumaobjeto() {
-        this.navCtrl.push(SumaobjetoPage, {caja: {numero1: this.numero1, numero2: this.numero2}});
+        this.navCtrl.push(SumaobjetoPage, {todo: {va1: this.numero1, va2: this.numero2}});
     }
+
+    
 
 }
