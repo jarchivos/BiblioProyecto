@@ -23,6 +23,9 @@ export class VerperfilPage {
     ionViewDidLoad() {
         console.log('ionViewDidLoad VerperfilPage');
     }
+    
+    
+    
 
 }
 

@@ -16,10 +16,6 @@ import {VerperfilPage} from '../pages/verperfil/verperfil'
 import {HttpClientModule} from '@angular/common/http';
 import {ConectarProvider} from '../providers/conectar/conectar';
 
-import {SifuncionaPage} from '../pages/sifunciona/sifunciona';
-import {SumaseparadaPage} from '../pages/sumaseparada/sumaseparada';
-import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
-
 @NgModule({
     declarations: [
         MyApp,
@@ -29,10 +25,7 @@ import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
         HumanidadesPage,
         SistemasPage,
         ListperPage,
-        VerperfilPage,
-        SifuncionaPage,
-        SumaseparadaPage,
-        SumaobjetoPage
+        VerperfilPage
     ],
     imports: [
         BrowserModule,
@@ -48,10 +41,7 @@ import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
         HumanidadesPage,
         SistemasPage,
         ListperPage,
-        VerperfilPage,
-        SifuncionaPage,
-        SumaseparadaPage,
-        SumaobjetoPage
+        VerperfilPage
     ],
     providers: [
         StatusBar,
