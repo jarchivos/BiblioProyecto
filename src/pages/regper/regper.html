@@ -12,14 +12,18 @@
 
 </ion-header>
 
-
 <ion-content padding>
+    <form [formGroup] = "RegPersona" (ngSubmit)="regPer()" novalidate>
+        <ion-list>     
 
-    <ion-list>     
-        <form [formGroup] = "RegPersona" (ngSubmit)="regper" novalidate>
+            <ion-item>
+                <ion-label>Start Time</ion-label>
+                <ion-datetime formControlName="fecha" displayFormat="DD MM YYYY" pickerFormat="DD MM YYYY"></ion-datetime>
+            </ion-item>
+
             <ion-item>
                 <ion-label>Tipo de documento</ion-label>
-                <ion-select formControlName="tipo" value="gaming">
+                <ion-select formControlName="tipo">
                     <ion-option value="1">Cédula</ion-option>
                     <ion-option value="2">Pasaporte</ion-option>
                     <ion-option value="3">Tarjeta Identidad</ion-option>
@@ -28,53 +32,70 @@
                 </ion-select>
             </ion-item>
 
-            <ion-item *ngIf="RegPersona.get('tipo').errors && >  
+            <ion-item *ngIf="RegPersona.get('tipo').errors && RegPersona.get('tipo').dirty"> 
+                <p ion-text *ngIf="RegPersona.get('tipo').hasError('required')"> El Campo es requerido </p>  
+            </ion-item>
+
+            <ion-item>
+                <ion-label floating>Número de cédula</ion-label>
+                <ion-input formControlName="numero" type="text"></ion-input>
+            </ion-item>
+
+            <ion-item *ngIf="RegPersona.get('numero').errors && RegPersona.get('numero').dirty">
+                <p ion-text *ngIf="RegPersona.get('numero').hasError('required')">El campo es requerido</p>
+                <p ion-text *ngIf="RegPersona.get('numero').hasError('pattern')">Ej:1234, no debe llevar letras</p>
+            </ion-item>
 
 
-                <ion-item>
-                    <ion-label floating>Número de cédula</ion-label>
-                    <ion-input formControlName="numero" type="text" value=""></ion-input>
-                </ion-item>
+            <ion-item>
+                <ion-label floating> Nombre </ion-label>
+                <ion-input formControlName="nombre" type="text"></ion-input>
+            </ion-item>
 
 
-                <ion-item>
-                    <ion-label floating> Nombre </ion-label>
-                    <ion-input formControlName="nombre" type="text" value=""></ion-input>
-                </ion-item>
+            <ion-item *ngIf="RegPersona.get('nombre').errors && RegPersona.get('nombre').dirty">
+                <p ion-text *ngIf="RegPersona.get('nombre').hasError('required')"> El campo es requerido</p>   
+                <p ion-text *ngIf="RegPersona.get('nombre').hasError('pattern')"> No debe llevar número</p>  
+            </ion-item>    
 
-                <ion-item>
-                    <ion-label floating> Apellido </ion-label>
-                    <ion-input formControlName="apellido" type="text" value=""></ion-input>
-                </ion-item>
-                <ion-item *ngIf="RegPersona.get('apellido').errors && RegPersona.get('apellido').dirty">
-                    <p color="danger" ion-text *ngIf="RegPersona.get('apellido').hasError('required')">El Campo es requerido</p>
-                    <p color="danger" ion-text *ngIf=RegPersona.get('apellido').hasError('pattern')">Ej: No debe llevar número</p>
-                </ion-item>
 
-                <ion-item>
-                    <ion-label floating> Teléfono </ion-label>
-                    <ion-input formControlName="tel" type="text" value= ""></ion-input>
-                </ion-item>
+            <ion-item>
+                <ion-label floating> Apellido </ion-label>
+                <ion-input formControlName="apellido" type="text" value=""></ion-input>
+            </ion-item>
 
-                <ion-item *ngIf="RegPersona.get('tel').errors && RegPersona.get('tel').dirty">
+            <ion-item *ngIf="RegPersona.get('apellido').errors && RegPersona.get('apellido').dirty">
+                <p ion-text ion-text *ngIf="RegPersona.get('apellido').hasError('required')"> El campo es requerido</p>   
+                <p ion-text ion-text *ngIf="RegPersona.get('apellido').hasError('pattern')"> No debe llevar número</p>  
+            </ion-item>  
 
-                    <ion-item>
-                        <ion-label floating> E-mail </ion-label>
-                        <ion-input formControlName="email" type="email" type="text"</ion-input>
-                    </ion-item>
+            <ion-item>
+                <ion-label floating> Teléfono </ion-label>
+                <ion-input formControlName="tel" type="text" value= ""></ion-input>
+            </ion-item>
 
-                    <ion-item *ngIf="RegPersona.get('email').errors && RegPersona.get('email').dirty">
-                        <p color="danger" ion-text *ngIf="RegPersona.get('email').hasError('required')" El campo es requerido </p>
-                        <p color="danger" ion-text *ngIf="RegPersona.get('email').hasError('email')">Ej:123@correo.com</p>
-                        <p color="danger" ion-text *ngIf="RegPersona.get('email').hasError('maxLength')">Máximo 30 Caracteres</p>
+            <ion-item *ngIf="RegPersona.get('tel').errors && RegPersona.get('tel').dirty">
+                <p ion-text *ngIf="RegPersona.get('tel').hasError('required')"> El campo es requerido </p>    
+                <p ion-text *ngIf="RegPersona.get('tel').hasError('pattern')"> Ej:+320 1234567 </p>
+            </ion-item> 
 
-                        <ion-item>
+            <ion-item>
+                <ion-label floating> E-mail </ion-label>
+                <ion-input formControlName="email" type="email" value= ""></ion-input>
+            </ion-item>
 
-                            <button type="submit" ion-button [disabled]="!RegPersona.valid" > Almacenar </button>
-                            <button type="reset" ion-button color="danger" style="float:right;"> Limpiar </button>
-                        </ion-item>
+            <ion-item *ngIf="RegPersona.get('email').errors && RegPersona.get('email').dirty">
+                <p ion-text *ngIf="RegPersona.get('email').hasError('required')"> El campo es requerido</p>
+                <p ion-text *ngIf="RegPersona.get('email').hasError('email')"> mi@correo.com </p>
+                <p ion-text *ngIf="RegPersona.get('email').hasError('maxLenght')">Máximo 30 caracteres </p>
+            </ion-item>
 
-                        </form>
-                        </ion-list>  
+            <ion-item>
+                <button type="submit" ion-button [disabled]="!RegPersona.valid" > Almacenar </button>
+                <button type="reset" ion-button style="float:right;"> Limpiar </button>
+            </ion-item>
 
-                        </ion-content>
+        </ion-list>  
+    </form>
+
+</ion-content>

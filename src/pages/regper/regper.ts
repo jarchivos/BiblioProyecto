@@ -25,11 +25,12 @@ export class RegperPage {
 
     iniciarFormulario() {
         this.RegPersona = this.CosValFor.group({
+            fecha: ['', [Validators.required]],
             tipo: ['', [Validators.required]],
             numero: ['', [Validators.required, Validators.pattern(/^[0-9]{5,20}$/)]],
-            nombre: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚÜ üñÑ] {2,30}$/)]],
-            apellido: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚÜ üñÑ] {2,30}$/)]],
-            tel: ['', [Validators.required, Validators.pattern(/^[+0-9] {7,15}$/)]],
+            nombre: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚÜ üñÑ]{2,30}$/)]],
+            apellido: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚÜ üñÑ]{2,30}$/)]],
+            tel: ['', [Validators.required, Validators.pattern(/^[/+0-9]{7,15}$/)]],
             email: ['', [Validators.required, Validators.email, Validators.maxLength(30)]]
         });
     }
@@ -37,7 +38,6 @@ export class RegperPage {
         console.log('ionViewDidLoad RegperPage');
     }
 
-    //
     regPer() {
         console.table(this.RegPersona.value);
     }
