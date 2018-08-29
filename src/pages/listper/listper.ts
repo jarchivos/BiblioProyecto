@@ -23,7 +23,7 @@ export class ListperPage {
         console.log('ionViewDidLoad ListperPage');
     }
 
-    numero:any;
+    numero: any;
     consultar() {
         let estado = this.acceso.traerListPer(this.numero);
         estado.subscribe(data => {
@@ -32,13 +32,12 @@ export class ListperPage {
             console.log(err);
         });
     }
-    
-    edificio:any;
+    edificio: any;
     ejecutar(laRespuestaDelServidor) {
         this.edificio = laRespuestaDelServidor.results;
     }
 
-    verperfil(persona) {
-        this.navCtrl.push(VerperfilPage,{data:persona});
+    irVerperfil(persona) {
+        this.navCtrl.push(VerperfilPage, {Data: persona});
     }
 }

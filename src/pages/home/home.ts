@@ -1,4 +1,4 @@
-    import {Component} from '@angular/core';
+import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {HemerotecaPage} from '../hemeroteca/hemeroteca';
 
@@ -18,26 +18,26 @@ export class HomePage {
     irHemeroteca() {
         this.navCtrl.push(HemerotecaPage);
     }
-    
-     irListadodepersonas() {
+
+    irListadodepersonas() {
         this.navCtrl.push(ListperPage);
     }
-    
-  
+
+
     irSifunciona() {
         this.navCtrl.push(SifuncionaPage);
     }
-    
-    irFormulario(){
+
+    irFormulario() {
         this.navCtrl.push(RegperPage);
     }
-    
-    
-    
-    nombre='';
-    public continuar(){
+
+
+
+    nombre = '';
+    public continuar() {
         this.navCtrl.push(SifuncionaPage, {nombre: this.nombre});
     }
-        
-    
+
+
 }

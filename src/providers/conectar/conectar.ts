@@ -17,8 +17,5 @@ export class ConectarProvider {
     traerListPer(numero) {
         return this.http.get("https://randomuser.me/api/?results=" + numero);
     }
-    
-    
-    
 
 }

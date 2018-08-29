@@ -1,3 +1,4 @@
+
 <!--
   Generated template for the ListperPage page.
 
@@ -15,15 +16,18 @@
         <ion-card-header>
             TRAER LOS USUARIOS
         </ion-card-header>
+
         <ion-list>
             <ion-item>
                 <ion-label floating>Número de Usuarios</ion-label>
                 <ion-input type="number" value="" [(ngModel)]="numero"></ion-input>
             </ion-item>
+
             <ion-item>
                 <button ion-button (click)="consultar()">Traer</button>
             </ion-item>
         </ion-list>
+
     </ion-card>
 
     <!--
@@ -32,20 +36,23 @@
                 {{persona.gender}}
     </button>   
 </ion-list>
+
     -->
 
     <ion-list>  
         <div *ngFor="let persona of edificio">
             <ion-item *ngIf="persona.gender == 'female'">
-                <ion-avatar>
-                    <img src="{{persona.picture.thumbnail}}">
+                <ion-avatar item-start>
+                    <img src="{{persona.picture.thumbnail}} >
                 </ion-avatar>
-
 
                 <h2>{{persona.name.first}} {{persona.name.last}}</h2>
                 <p> {{persona.gender}} <b> con edad </b>{{persona.dob.age}}</p> 
-                <button ion-button item-end (click) ="verperfil(persona)">Vamosnos</button>
-            </ion-item>
+
+            </ion-item>  
+
+            <button ion-button item-end (click) ="irVerperfil(persona)"> </button>
+
         </div>
     </ion-list>
 
