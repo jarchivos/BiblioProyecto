@@ -21,6 +21,8 @@ import {SifuncionaPage} from '../pages/sifunciona/sifunciona';
 import {SumaseparadaPage} from '../pages/sumaseparada/sumaseparada';
 import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
 import {RegperPage} from '../pages/regper/regper'
+import {BusPerPage} from '../pages/bus-per/bus-per'
+
 
 @NgModule({
     declarations: [
@@ -35,7 +37,8 @@ import {RegperPage} from '../pages/regper/regper'
         SifuncionaPage,
         SumaseparadaPage,
         SumaobjetoPage,
-        RegperPage
+        RegperPage,
+        BusPerPage
     ],
     imports: [
         BrowserModule,
@@ -55,7 +58,8 @@ import {RegperPage} from '../pages/regper/regper'
         SifuncionaPage,
         SumaseparadaPage,
         SumaobjetoPage,
-        RegperPage
+        RegperPage,
+        BusPerPage
     ],
     providers: [
         StatusBar,

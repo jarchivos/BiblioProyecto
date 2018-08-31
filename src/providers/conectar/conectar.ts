@@ -18,4 +18,15 @@ export class ConectarProvider {
         return this.http.get("https://randomuser.me/api/?results=" + numero);
     }
 
+    //  Esto sirve para encapsular y enviar al servidor, formatos que no reconozca, ej: ñ, tildes.
+    options = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    };
+
+    enviarAlservidor(persona: any) {
+        return this.http.post("http://192.168.0.222/flas011/controller/registro.php", JSON.stringify(persona), this.options);
+
+    }
 }
