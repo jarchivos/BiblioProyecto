@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { BusPerPage } from './bus-per';
+import { BusperPage } from './busper';
 
 @NgModule({
   declarations: [
-    BusPerPage,
+    BusperPage,
   ],
   imports: [
-    IonicPageModule.forChild(BusPerPage),
+    IonicPageModule.forChild(BusperPage),
   ],
 })
-export class BusPerPageModule {}
+export class BusperPageModule {}

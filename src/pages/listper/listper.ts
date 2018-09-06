@@ -23,9 +23,9 @@ export class ListperPage {
         console.log('ionViewDidLoad ListperPage');
     }
 
-    numero: any;
+    ced: any;
     consultar() {
-        let estado = this.acceso.traerListPer(this.numero);
+        let estado = this.acceso.traerListPer(this.ced);
         estado.subscribe(data => {
             this.ejecutar(data);
         }, err => {

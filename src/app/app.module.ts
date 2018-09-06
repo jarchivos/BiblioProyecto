@@ -3,7 +3,7 @@ import {ErrorHandler, NgModule} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {StatusBar} from '@ionic-native/status-bar';
-
+import {Camera} from '@ionic-native/camera';
 
 import {MyApp} from './app.component';
 import {HomePage} from '../pages/home/home';
@@ -21,7 +21,10 @@ import {SifuncionaPage} from '../pages/sifunciona/sifunciona';
 import {SumaseparadaPage} from '../pages/sumaseparada/sumaseparada';
 import {SumaobjetoPage} from '../pages/sumaobjeto/sumaobjeto';
 import {RegperPage} from '../pages/regper/regper'
-import {BusPerPage} from '../pages/bus-per/bus-per'
+import {BusperPage} from '../pages/busper/busper'
+
+import {PerperPage} from '../pages/perper/perper';
+import {ActurperPage} from '../pages/acturper/acturper';
 
 
 @NgModule({
@@ -38,7 +41,9 @@ import {BusPerPage} from '../pages/bus-per/bus-per'
         SumaseparadaPage,
         SumaobjetoPage,
         RegperPage,
-        BusPerPage
+        BusperPage,
+        PerperPage,
+        ActurperPage
     ],
     imports: [
         BrowserModule,
@@ -59,13 +64,16 @@ import {BusPerPage} from '../pages/bus-per/bus-per'
         SumaseparadaPage,
         SumaobjetoPage,
         RegperPage,
-        BusPerPage
+        BusperPage,
+        PerperPage,
+        ActurperPage
     ],
     providers: [
         StatusBar,
         SplashScreen,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
-        ConectarProvider
+        ConectarProvider,
+        Camera
     ]
 })
 export class AppModule {}

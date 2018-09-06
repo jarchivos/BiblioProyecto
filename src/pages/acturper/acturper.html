@@ -1,5 +1,5 @@
 <!--
-  Generated template for the RegperPage page.
+  Generated template for the ActurperPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,13 +7,15 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>Registro de Personas</ion-title>
+        <ion-title>acturper</ion-title>
     </ion-navbar>
 
 </ion-header>
 
+
 <ion-content padding>
-    <form [formGroup] = "RegPersona" (ngSubmit)="regPer()" novalidate>
+    <h1> Actualizar Datos </h1>
+   <form [formGroup]="RegPersona" (ngSubmit)="actualizarPer()" novalidate>
         <ion-list>     
 
             <ion-item>
@@ -60,7 +62,7 @@
 
             <ion-item>
                 <ion-label floating> Apellido </ion-label>
-                <ion-input formControlName="apellido" type="text" value=""></ion-input>
+                <ion-input formControlName="apellido" type="text"></ion-input>
             </ion-item>
 
             <ion-item *ngIf="RegPersona.get('apellido').errors && RegPersona.get('apellido').dirty">
@@ -70,7 +72,7 @@
 
             <ion-item>
                 <ion-label floating> Teléfono </ion-label>
-                <ion-input formControlName="telefono" type="text" value= ""></ion-input>
+                <ion-input formControlName="telefono" type="text"></ion-input>
             </ion-item>
 
             <ion-item *ngIf="RegPersona.get('telefono').errors && RegPersona.get('telefono').dirty">
@@ -80,7 +82,7 @@
 
             <ion-item>
                 <ion-label floating> E-mail </ion-label>
-                <ion-input formControlName="email" type="email" value= ""></ion-input>
+                <ion-input formControlName="email" type="email"></ion-input>
             </ion-item>
 
             <ion-item *ngIf="RegPersona.get('email').errors && RegPersona.get('email').dirty">
@@ -89,11 +91,20 @@
                 <p ion-text *ngIf="RegPersona.get('email').hasError('maxLenght')">Máximo 30 caracteres </p>
             </ion-item>
 
-            <ion-item>
+         <ion-item>
                 <button type="submit" ion-button [disabled]="!RegPersona.valid" > Almacenar </button>
                 <button type="reset" ion-button style="float:right;"> Limpiar </button>
             </ion-item>
-
+       
+            
+            <!--   <ion-item>
+                <button type="submit" ion-button [disabled]="!actualizarPer.valid" > Actualizar </button>
+                <button type="reset" ion-button style="float:right;"> Limpiar </button>
+            </ion-item>
+         -->
+            
+            
+            
         </ion-list>  
     </form>
 

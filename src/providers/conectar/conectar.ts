@@ -3,7 +3,6 @@ import {Injectable} from '@angular/core';
 
 /*
   Generated class for the ConectarProvider provider.
-
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
@@ -14,8 +13,8 @@ export class ConectarProvider {
         console.log('Hello ConectarProvider Provider');
     }
 
-    traerListPer(numero) {
-        return this.http.get("https://randomuser.me/api/?results=" + numero);
+    traerListPer(ced) {
+        return this.http.get("https://randomuser.me/api/?results=" + ced);
     }
 
     //  Esto sirve para encapsular y enviar al servidor, formatos que no reconozca, ej: ñ, tildes.
@@ -26,7 +25,20 @@ export class ConectarProvider {
     };
 
     enviarAlservidor(persona: any) {
+        console.table(persona);
+      
         return this.http.post("http://192.168.0.222/flas011/controller/registro.php", JSON.stringify(persona), this.options);
-
+        //return this.http.post("http://192.168.0.75/flas011/controller/registro.php", JSON.stringify(persona), this.options);
     }
+
+    servidorBuscar(criterio: any) {
+       
+        return this.http.post("http://192.168.0.222/flas011/controller/buscar.php", JSON.stringify(criterio), this.options);
+        //return this.http.post("http://192.168.0.75/flas011/controller/buscar.php", JSON.stringify(criterio), this.options);
+    }
+    
+    servidorActualizar(newPersona){
+        return this.http.post("http://192.168.0.222/flas011/controller/actualizarPersona.php", JSON.stringify(newPersona), this.options);
+    }
+
 }

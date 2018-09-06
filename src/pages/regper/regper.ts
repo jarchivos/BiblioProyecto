@@ -33,13 +33,13 @@ export class RegperPage {
 
     iniciarFormulario() {
         this.RegPersona = this.CosValFor.group({
-            fecha: ['', [Validators.required]],
-            tipo: ['', [Validators.required]],
-            numero: ['', [Validators.required, Validators.pattern(/^[0-9]{5,20}$/)]],
-            nombre: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚÜ üñÑ]{2,30}$/)]],
-            apellido: ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚÜ üñÑ]{2,30}$/)]],
-            tel: ['', [Validators.required, Validators.pattern(/^[/+0-9]{7,15}$/)]],
-            email: ['', [Validators.required, Validators.email, Validators.maxLength(30)]]
+            fecnac:     ['', [Validators.required]],
+            tipo:       ['', [Validators.required]],
+            ced:        ['', [Validators.required, Validators.pattern(/^[0-9]{5,20}$/)]],
+            nombre:     ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚÜ üñÑ]{2,30}$/)]],
+            apellido:   ['', [Validators.required, Validators.pattern(/^[a-zA-ZáéíóúÁÉÍÓÚÜ üñÑ]{2,30}$/)]],
+            telefono:   ['', [Validators.required, Validators.pattern(/^[/+0-9]{7,15}$/)]],
+            email:      ['', [Validators.required, Validators.email, Validators.maxLength(30)]]
         });
     }
     /*    regPer this.miventana = this.VentanaEspera.crea               content: "Un momento... <br> Se esta procesando su solici                             // Mostr               this.miventana.presen               console.table(this.RegPersona.val      
@@ -48,16 +48,16 @@ export class RegperPage {
     reg                    this.miventana = this.VentanaEspera.c                        content: "Un momento... <br> Se esta procesando su sol                                    // Mo                    this.miventana.pre                    let estado = this.conecta.enviarAlservidor(this.RegPersona.                    // Vamos a consumir el s                    estado.subscribe(data => {                    // Vamos a consumir una                                         // Reciba y Respuesta del s                                       e                            this.miventana.dis                            console.lo                            this.presentAlert("Error No.06", "No existe conexión con el servidor. Verifique la cone                                 );                    
     */
 
-
     regPer() {
         this.miventana = this.VentanaEspera.create({
             content: "Un momento...<b>Se esta procesando su solicitud"
         });
         this.miventana.present();
-      //  console.table(this.RegPersona.value);  // Este sirve para probar el envio de información.
+        //console.table(this.RegPersona.value);  // Este sirve para probar el envio de información.
         let estado = this.conecta.enviarAlservidor(this.RegPersona.value);
         estado.subscribe(data => {
             let res: any = data;
+            console.table(res);
             this.miventana.dismiss();
             if (res.success == "ok") {
                 this.presentAlert("Positivo", "El usuario fue registrado");

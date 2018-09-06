@@ -5,7 +5,7 @@ import {HemerotecaPage} from '../hemeroteca/hemeroteca';
 import {ListperPage} from '../listper/listper';
 import {SifuncionaPage} from '../sifunciona/sifunciona';
 import {RegperPage} from '../regper/regper';
-import {BusPerPage} from '../bus-per/bus-per'
+import {BusperPage} from '../busper/busper'
 
 @Component({
     selector: 'page-home',
@@ -32,9 +32,9 @@ export class HomePage {
     irFormulario() {
         this.navCtrl.push(RegperPage);
     }
-    
-    irBuscarPersona(){
-        this.navCtrl.push(BusPerPage);
+
+    irBuscarPersona() {
+        this.navCtrl.push(BusperPage);
     }
 
 

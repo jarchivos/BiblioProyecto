@@ -13,7 +13,6 @@ export class HemerotecaPage {
     numero3;
     Estado;
 
-
     Ctrl: boolean = true;
     Cambio(valor) {
         this.Ctrl = valor;
